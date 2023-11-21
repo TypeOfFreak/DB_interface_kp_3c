@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+    <meta charset="utf-8">
+
+    <title>page</title>
+
+    <!-- Theme CSS -->
+    <link href="css/styles.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+    <!-- Side navigation -->
+    <div class="sidenav">
+        <!-- Remove pic later lmao -->
+        <img src="./img/think.png" class = "logo"> 
+        <div class = "tab">
+            <button class="tablinks" onclick="openTab(event, 'Find')">Найти</a>
+            <button  class="tablinks" onclick="openTab(event, 'Add')">Добавить</a>
+            <button class="tablinks" onclick="openTab(event, 'Delete')">Удалить</a>
+      </div> 
+    </div>
+
+    <div class = "main">
+        <div id="Find" class="tabcontent">
+            <form action = "" method="post">
+
+                <label class = "text-field__label" for = "id_order" > Найти заказ: </label> 
+                <hr>
+                <input type="text" id="id_doc" class = "text-field__input" name="id_order" />
+
+                <button class="text-field__btn" type="button">Найти</button>
+            </form>
+
+
+
+        </div>
+        <div id="Add" class="tabcontent">
+            <form action = "" method="post">
+                <span class = "text-field__label" > Добавить заказ: </span> 
+                <hr>
+                <br>
+                <label for="orderer" class = "text-field__label">Заказчик:</label>
+                <br>
+                <input type="text" id="name" class = "text-field__input" name="orderer" />
+                <br>
+                <label for="order" class = "text-field__label">Заказ:</label>
+                <br>
+                <input type="text" id="name" class = "text-field__input" name="order" />
+                <br>
+                <button class="text-field__btn" type="button">Добавить</button>
+            </form>
+
+        </div>
+
+        <div id="Delete" class="tabcontent">
+            <form action = "" method="post">
+
+                <span class = "text-field__label" > Удалить заказ: </span> 
+                <hr>
+                <label class = "text-field__label" for = "id_order">  Номер заказа: </span> 
+                <input type="text" id="id_doc" class = "text-field__input" name="id_order" />
+
+                <button class="text-field__btn" type="button">Удалить</button>
+            </form>
+            
+    </div>
+
+
+    <script type="text/javascript">
+        function openTab(evt, tabName) {
+            // Declare all variables
+            var i, tabcontent, tablinks;
+
+            // Get all elements with class="tabcontent" and hide them
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+
+            // Get all elements with class="tablinks" and remove the class "active"
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+
+            // Show the current tab, and add an "active" class to the button that opened the tab
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+</body>
+
+</html>
